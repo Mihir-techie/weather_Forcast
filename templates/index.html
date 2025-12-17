@@ -32,12 +32,13 @@
         /* Default/Clear Day - Beautiful Blue Sky */
         body.clear, body.default {
             background: linear-gradient(180deg, 
-                #1e3c72 0%, 
-                #2a5298 15%,
-                #4a90c2 35%, 
-                #74b9e8 55%, 
-                #a8d8f0 75%,
-                #e8f4f8 100%);
+                #0a1628 0%, 
+                #1a3a5c 12%,
+                #2563eb 30%, 
+                #3b82f6 50%, 
+                #60a5fa 70%,
+                #7dd3fc 90%,
+                #93c5fd 100%);
         }
 
         /* Clear Night - Starry Night */
@@ -95,10 +96,11 @@
         /* Snow - Winter Wonderland */
         body.snow {
             background: linear-gradient(180deg, 
-                #8ba5b5 0%, 
-                #a5c0d0 30%,
-                #c8dce8 60%, 
-                #e8f0f5 100%);
+                #475569 0%, 
+                #64748b 25%,
+                #94a3b8 50%, 
+                #cbd5e1 80%,
+                #e2e8f0 100%);
         }
 
         body.snow-night {
@@ -111,10 +113,10 @@
         /* Mist/Fog/Haze - Mysterious */
         body.mist, body.fog, body.haze, body.smoke {
             background: linear-gradient(180deg, 
-                #667788 0%, 
-                #8899aa 30%,
-                #aabbcc 60%, 
-                #ccddee 100%);
+                #475569 0%, 
+                #64748b 30%,
+                #94a3b8 60%, 
+                #b8c4ce 100%);
         }
 
         /* ============ ANIMATED WEATHER ELEMENTS ============ */
@@ -146,29 +148,28 @@
             position: absolute;
             top: 8%;
             right: 12%;
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             background: radial-gradient(circle, 
-                #fff9e6 0%, 
-                #ffe066 25%,
-                #ffb347 50%, 
-                #ff8c00 80%,
+                #fef3c7 0%, 
+                #fcd34d 30%,
+                #f59e0b 60%, 
+                #d97706 90%,
                 transparent 100%);
             border-radius: 50%;
             box-shadow: 
-                0 0 80px rgba(255, 200, 50, 0.9),
-                0 0 160px rgba(255, 150, 50, 0.6),
-                0 0 280px rgba(255, 100, 50, 0.4),
-                0 0 400px rgba(255, 80, 50, 0.2);
+                0 0 40px rgba(251, 191, 36, 0.6),
+                0 0 80px rgba(245, 158, 11, 0.4),
+                0 0 120px rgba(217, 119, 6, 0.2);
             animation: sun-pulse 6s ease-in-out infinite;
         }
 
         .sun::before {
             content: '';
             position: absolute;
-            inset: -30px;
+            inset: -15px;
             background: radial-gradient(circle, 
-                rgba(255, 230, 150, 0.3) 0%,
+                rgba(251, 191, 36, 0.2) 0%,
                 transparent 70%);
             border-radius: 50%;
             animation: sun-glow 4s ease-in-out infinite alternate;
@@ -177,17 +178,15 @@
         @keyframes sun-pulse {
             0%, 100% {
                 transform: scale(1);
-                filter: brightness(1);
             }
             50% {
-                transform: scale(1.08);
-                filter: brightness(1.15);
+                transform: scale(1.05);
             }
         }
 
         @keyframes sun-glow {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.3); opacity: 0.8; }
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.2); opacity: 0.6; }
         }
 
         /* Sun Rays - Beautiful Rotating */
@@ -195,20 +194,20 @@
             position: absolute;
             top: 8%;
             right: 12%;
-            width: 140px;
-            height: 140px;
-            animation: rotate-rays 60s linear infinite;
+            width: 100px;
+            height: 100px;
+            animation: rotate-rays 80s linear infinite;
         }
 
         .sun-ray {
             position: absolute;
-            width: 4px;
-            height: 80px;
-            background: linear-gradient(to top, transparent, rgba(255, 220, 100, 0.6), transparent);
+            width: 3px;
+            height: 60px;
+            background: linear-gradient(to top, transparent, rgba(251, 191, 36, 0.3), transparent);
             left: 50%;
-            top: -50px;
-            transform-origin: center 120px;
-            border-radius: 4px;
+            top: -40px;
+            transform-origin: center 90px;
+            border-radius: 3px;
         }
 
         @keyframes rotate-rays {
@@ -216,23 +215,21 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Lens Flare Effect */
+        /* Lens Flare Effect - Subtle */
         .lens-flare {
             position: absolute;
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 85% 15%, rgba(255, 255, 200, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 75% 25%, rgba(255, 200, 100, 0.1) 0%, transparent 15%),
-                radial-gradient(circle at 65% 35%, rgba(255, 150, 50, 0.08) 0%, transparent 10%),
-                radial-gradient(circle at 55% 45%, rgba(255, 100, 50, 0.05) 0%, transparent 8%);
+                radial-gradient(circle at 88% 10%, rgba(251, 191, 36, 0.08) 0%, transparent 20%),
+                radial-gradient(circle at 80% 18%, rgba(245, 158, 11, 0.05) 0%, transparent 12%);
             pointer-events: none;
-            animation: flare-shimmer 8s ease-in-out infinite;
+            animation: flare-shimmer 10s ease-in-out infinite;
         }
 
         @keyframes flare-shimmer {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
         }
 
         /* Flying Birds */
@@ -276,9 +273,9 @@
 
         .dust {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), transparent);
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
             border-radius: 50%;
             animation: dust-float ease-in-out infinite;
         }
@@ -289,14 +286,14 @@
                 opacity: 0;
             }
             10% {
-                opacity: 0.8;
+                opacity: 0.5;
             }
             50% {
-                transform: translateY(-80px) translateX(30px);
-                opacity: 0.6;
+                transform: translateY(-60px) translateX(25px);
+                opacity: 0.4;
             }
             90% {
-                opacity: 0.3;
+                opacity: 0.2;
             }
         }
 
@@ -309,9 +306,9 @@
 
         .light-cloud {
             position: absolute;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 100px;
-            filter: blur(30px);
+            filter: blur(40px);
             animation: cloud-drift linear infinite;
         }
 
@@ -623,9 +620,9 @@
 
         .cloud {
             position: absolute;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.25);
             border-radius: 100px;
-            filter: blur(25px);
+            filter: blur(30px);
             animation: float-cloud linear infinite;
         }
 
@@ -654,14 +651,14 @@
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
-                linear-gradient(180deg, rgba(200, 200, 200, 0.3) 0%, transparent 30%);
+                linear-gradient(0deg, rgba(148, 163, 184, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(100, 116, 139, 0.25) 0%, transparent 30%);
             animation: mist-drift 20s ease-in-out infinite;
         }
 
         @keyframes mist-drift {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 0.9; }
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.7; }
         }
 
         /* ============ MAIN CONTAINER ============ */
@@ -1210,15 +1207,15 @@
             }
 
             .sun {
-                width: 100px;
-                height: 100px;
+                width: 70px;
+                height: 70px;
                 top: 5%;
                 right: 5%;
             }
 
             .sun-rays {
-                width: 100px;
-                height: 100px;
+                width: 70px;
+                height: 70px;
                 top: 5%;
                 right: 5%;
             }
@@ -1284,17 +1281,17 @@
                     <span class="search-icon">🔍</span>
                     Search
                 </button>
-            </form>
+    </form>
         </div>
 
-        {% if error %}
+    {% if error %}
         <div class="error-message">
             <span>⚠️</span>
             <span>{{ error }}</span>
         </div>
-        {% endif %}
+    {% endif %}
 
-        {% if weather %}
+    {% if weather %}
         <div class="weather-card">
             <div class="location">
                 <span class="location-icon">📍</span>
@@ -1357,12 +1354,12 @@
                     <div class="forecast-time">{{ time }}</div>
                     <div class="forecast-temp">{{ temp }}<span>°C</span></div>
                 </div>
-                {% endfor %}
+        {% endfor %}
             </div>
         </div>
         {% endif %}
-        {% endif %}
-    </div>
+    {% endif %}
+</div>
 
     <script>
         // Generate Sun Rays
